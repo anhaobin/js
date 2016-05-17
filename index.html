@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+			  width: 100px;
+			  height: 30px;
+			  background: red;
+			 
+			  box-shadow:3px 3px 3px 3px #000;
+			  border-radius: 5px;
+			}
+			@-webkit-keyframes name1{
+				0%{background: green;}
+				50%{background: yellow;}
+				100%{background: black;}
+			}
+			.slow{
+			  -webkit-animation:name1 1s linear infinite;
+			}
+		</style>
+	</head>
+	<body>
+	  <!--<div></div>-->
+		<ul id="list">
+      <li>This is Jerry</li>
+      <li>This is Lucy</li>
+      <li>This is Lily</li>
+      <li>This is Tomy</li>
+      <!--<input type="button" value="点击"/>-->
+      <div style="background-color:red">
+      <p>这是一个段落。</p>
+      <button>请点击这里</button>
+      </div>
+   </ul><script src="js/jquery-1.12.2.min.js" type="text/javascript" charset="utf-8"></script>
+     <script type="text/javascript">
+     
+     
+// jQuery.fx.off = true;
+//jQuery.fx.interval = 1000;
+//$("input[type=button]").click(function(){
+//    $("div").toggle();
+//});
+     
+// $("div").delegate("button","click",function(){
+//$("p").slideToggle();
+//});  
+$("button").click(function(){
+  $("p").slideToggle();
+})
+     
+ /*<ulid="list">
+<li>This is Jerry</li>
+<li>This is Lucy</li>
+<li>This is Lily</li>
+<li>This is Tomy</li>
+</ul>
+编写 JavaScript，使得点击页面的特定 li 元素就会 alert "元素的序号. 内容"。例如点击第一个元素，就会 alert 出 "1. This is Jerry"。（不能用jQuery，注意需要alert序号）*/
+
+
+//    window.onload = function(){
+//      var list = document.getElementById("list").getElementsByTagName("li");
+//      for(i=0;i<list.length;i++){
+//        list[i].index = i
+//        list[i].onclick = function(){
+//          alert(this.index+1+'.'+this.innerHTML);
+//        }
+//      }
+//    }
+
+//window.onload = function(){
+//var ull = document.getElementById("list");
+//var lii = document.getElementsByTagName("li");
+//ull.onclick = function(e){
+//  var e = e || window.event;
+//  var target = e.target || e.srcElement;
+//  if(target.nodeName.toLowerCase() == "li"){
+//           var index;
+//           for(var i=0;i<lii.length;i++){
+//             if(lii[i] == target){
+//               index = i;
+//             };
+//           }
+//    alert(index+1+"."+target.innerHTML)
+//  }
+//}
+//}
+
+
+
+  
+
+/*找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。
+1 => A
+2 => B
+3 => C
+...
+26 => Z
+27 => AA
+28 => AB
+29 => AC
+...
+52 => AZ
+53 => BA
+...
+functionconvert (num) {
+// TODO
+} */
+  
+  
+function convert(num){
+     var data = num%26;
+     var obj = parseInt(num/26);
+     var arra = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
+     var arr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+     if(num <= 26){
+       alert(arr[num-1])
+     }else if(num > 26){
+       if(arra[data]){
+         var one = arr[obj-1]
+       }
+       if(arra[obj]){
+         var two = arr[data-1]
+       }
+       alert(one+two);
+       }
+     }
+   convert();
+     </script>
+	</body>
+</html>
